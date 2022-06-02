@@ -1,7 +1,3 @@
-"""
-An attempt at writing a brainfuck interprater
-"""
-
 def matchLoops(program):
     loops = {}
     loopStart = []
@@ -31,7 +27,7 @@ def main(pro):
 
     i = 0
     while i < len(program):
-        print(f'cells: {cell}\nloop status: {open}')
+#        print(f'cells: {cell}\nloop status: {open}')
 
         if program[i] == '>':
             pointer += 1
@@ -56,7 +52,10 @@ def main(pro):
             cell[pointer] -= 1
 
         elif program[i] == '.':
-            print(f"{cell[pointer]} ", end='')
+            print(f"{chr(cell[pointer])}", end='')
+
+        elif program[i] ==",":
+            cell[pointer] = ord(input()[0])
 
         elif program[i] == '[':
             open += 1
@@ -77,9 +76,4 @@ def main(pro):
     if open != 0:
         return('LoopError\nA loop has a start, but no end!')
 
-    return(f'\n{cell}')
-
-
-print(main("+++[>++<-]"))
-
-# print(matchLoops("[[][]"))
+    print("")

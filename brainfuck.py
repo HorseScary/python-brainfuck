@@ -16,6 +16,15 @@ def makeList(pro):
         program.append(pro[i])
     return(program)
 
+def readFromFile(fileName):
+    program = ''
+    file = open(fileName, 'r')
+
+    for line in file:
+        program += line
+    
+    return(program)
+
 def main(pro):
     #create variables
     program = makeList(pro)
@@ -27,8 +36,6 @@ def main(pro):
 
     i = 0
     while i < len(program):
-#        print(f'cells: {cell}\nloop status: {open}')
-
         if program[i] == '>':
             pointer += 1
 
@@ -77,3 +84,5 @@ def main(pro):
         return('LoopError\nA loop has a start, but no end!')
 
     print("")
+
+main(readFromFile("program.bf"))

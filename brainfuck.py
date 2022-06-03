@@ -36,47 +36,48 @@ def main(pro):
 
     i = 0
     while i < len(program):
-        if program[i] == '>':
-            pointer += 1
+        match program[i]:
+            case '>':
+                pointer += 1
 
-            try:
-                cell[pointer]
+                try:
+                    cell[pointer]
 
-            except IndexError:
-                cell.append(0)
+                except IndexError:
+                    cell.append(0)
 
-        elif program[i] == '<':
-            if pointer == 0:
-                cell.insert(0, 0)
+            case '<':
+                if pointer == 0:
+                    cell.insert(0, 0)
 
-            else:
-                pointer -= 1
+                else:
+                    pointer -= 1
 
-        elif program[i] == '+':
-            cell[pointer] += 1
+            case '+':
+                cell[pointer] += 1
 
-        elif program[i] == '-':
-            cell[pointer] -= 1
+            case '-':
+                cell[pointer] -= 1
 
-        elif program[i] == '.':
-            print(f"{chr(cell[pointer])}", end='')
+            case '.':
+                print(f"{chr(cell[pointer])}", end='')
 
-        elif program[i] ==",":
-            cell[pointer] = ord(input()[0])
+            case ",":
+                cell[pointer] = ord(input()[0])
 
-        elif program[i] == '[':
-            open += 1
+            case '[':
+                open += 1
 
-        elif program[i] == ']':
-            if open == 0:
-                print("LoopError\nA loop has an end, but no start!")
+            case']':
+                if open == 0:
+                    print("LoopError\nA loop has an end, but no start!")
 
-            elif cell[pointer] == 0:
-                open -= 1
-                pass
+                elif cell[pointer] == 0:
+                    open -= 1
+                    pass
 
-            else: 
-                i = loops[i]
+                else: 
+                    i = loops[i]
 
         i += 1
 

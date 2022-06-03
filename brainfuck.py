@@ -9,6 +9,7 @@ def matchLoops(program):
 
     return(loops)
 
+# this function probably doesn't need to exist, but i don't want to break my shit so im keeping it
 def makeList(pro):
     program = []
 
@@ -86,4 +87,4 @@ def main(pro):
 
     print("")
 
-main(readFromFile("program.bf"))
+main(readFromFile("example_code/hello-world.bf"))

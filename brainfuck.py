@@ -1,3 +1,5 @@
+import argparse
+
 def matchLoops(program):
     loops = {}
     loopStart = []
@@ -9,14 +11,6 @@ def matchLoops(program):
 
     return(loops)
 
-# this function probably doesn't need to exist, but i don't want to break my shit so im keeping it
-def makeList(pro):
-    program = []
-
-    for i in range(len(pro)):
-        program.append(pro[i])
-    return(program)
-
 def readFromFile(fileName):
     program = ''
     file = open(fileName, 'r')
@@ -26,9 +20,8 @@ def readFromFile(fileName):
     
     return(program)
 
-def main(pro):
+def fuck(program):
     #create variables
-    program = makeList(pro)
     loops = matchLoops(program)
 
     cell = [0]
@@ -87,4 +80,13 @@ def main(pro):
 
     print("")
 
-main(readFromFile("example_code/hello-world.bf"))
+def main(file):
+    program = readFromFile(file)
+
+    fuck(program)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("file")
+args = parser.parse_args()
+
+main(args.file)

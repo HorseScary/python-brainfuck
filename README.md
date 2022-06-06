@@ -2,8 +2,8 @@
 
 A brainfuck interpreter.
 
-# installation 
+## installation 
 
-Clone the repo and cd into the brainfuck directory
-run `sudo pip install .`
-or just `pip install .` to install locally
+`git clone https://github.com/HorseScary/python-brainfuck.git && cd python-brainfuck/brainfuck`
+
+run `sudo pip install .` (`pip install .` to install locally)

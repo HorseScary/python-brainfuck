@@ -2,7 +2,6 @@
 
 A brainfuck interpreter.
 
----
 ## installation  
 `git clone https://github.com/HorseScary/python-brainfuck.git && cd python-brainfuck/brainfuck`
 

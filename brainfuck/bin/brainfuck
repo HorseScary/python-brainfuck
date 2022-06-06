@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+import brainfuck
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('file')
+args = parser.parse_args()
+
+brainfuck.main(args.file)
